@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel operativo — Gabriel Chernitsky | Seguros, Rentas y Auxiliar Bancario</title>
+<meta name="description" content="Panel operativo de Gabriel Chernitsky: módulos funcionales de Seguros, Rentas y Auxiliar Bancario interconectados, con tablas, búsqueda y filtros.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="app.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232c6fd6'/%3E%3Ctext x='50%25' y='54%25' font-size='38' text-anchor='middle' dominant-baseline='middle' font-family='Arial' fill='white'%3E%E2%8C%82%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">⌂</span>
+        <span>Gabriel Chernitsky<small>Property Management Cloud</small></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="funcionalidades.html">Funcionalidades</a></li>
+        <li><a href="precios.html">Precios</a></li>
+        <li><a href="app.html" class="active">Panel</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="index.html">Volver al sitio</a>
+        <a class="btn btn-primary" href="contacto.html">Solicitar demo</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<!-- PANEL -->
+<div class="app-wrap">
+  <div class="container">
+
+    <div class="mod-head">
+      <div>
+        <span class="eyebrow">🧩 Panel operativo</span>
+        <h2>Tus módulos funcionales, en un solo lugar</h2>
+        <p>Seguros, Rentas y Auxiliar Bancario interconectados. Captura una vez y la información se comparte entre módulos. Todo se guarda en este dispositivo (localStorage).</p>
+      </div>
+    </div>
+
+    <div class="app-grid">
+
+      <!-- SIDEBAR -->
+      <aside class="app-side">
+        <h4>Módulos</h4>
+        <div class="side-link active" data-go="seguros"><span class="si">🛡️</span> Seguros</div>
+        <div class="side-link" data-go="rentas"><span class="si">🏠</span> Rentas y reportes</div>
+        <div class="side-link" data-go="auxiliar"><span class="si">🏦</span> Auxiliar Bancario</div>
+        <div class="side-foot">
+          <p>¿Quieres tu plataforma a la medida?</p>
+          <a class="btn btn-wa btn-sm btn-block" href="https://wa.me/5215594356241" target="_blank" rel="noopener">💬 Hablar por WhatsApp</a>
+          <button class="linkish" id="seed-demo" style="margin-top:12px">Cargar datos de ejemplo</button>
+          <span style="color:var(--line)"> · </span>
+          <button class="linkish" id="reset-all" style="color:var(--danger)">Borrar todo</button>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="app-main">
+
+        <!-- ============== MÓDULO SEGUROS ============== -->
+        <section class="module show" id="mod-seguros">
+          <div class="mod-head">
+            <div>
+              <span class="eyebrow">🛡️ Módulo de Seguros</span>
+              <h2>Pólizas, cotizaciones y agentes</h2>
+              <p>Registra asegurados y beneficiarios para inmuebles, autos y gastos médicos, compara cotizaciones y administra a tu equipo de venta.</p>
+            </div>
+          </div>
+
+          <div class="kpis" id="seg-kpis"></div>
+
+          <div class="subtabs">
+            <button class="subtab active" data-pane="seg-polizas">Pólizas <span class="count-pill" id="seg-c-pol">0</span></button>
+            <button class="subtab" data-pane="seg-cotiza">Cotizaciones <span class="count-pill" id="seg-c-cot">0</span></button>
+            <button class="subtab" data-pane="seg-agentes">Agentes de venta <span class="count-pill" id="seg-c-ag">0</span></button>
+          </div>
+
+          <!-- PANE: Pólizas -->
+          <div class="pane show" id="seg-polizas">
+            <div class="block">
+              <div class="block-head"><h3 id="seg-pol-title">Registrar póliza / asegurado</h3><span class="hint">Inmueble · Auto · Médico</span></div>
+              <form id="seg-pol-form" autocomplete="off">
+                <input type="hidden" name="id">
+                <div class="form-grid">
+                  <div class="field"><label>Tipo de seguro <span class="req">*</span></label>
+                    <select name="tipo" required>
+                      <option value="inmueble">🏢 Inmueble</option>
+                      <option value="auto">🚗 Auto</option>
+                      <option value="medico">⚕️ Médico</option>
+                    </select>
+                  </div>
+                  <div class="field"><label>Asegurado <span class="req">*</span></label><input name="asegurado" placeholder="Nombre del titular" required></div>
+                  <div class="field"><label>Beneficiario</label><input name="beneficiario" placeholder="A quién protege"></div>
+                  <div class="field col-2"><label>¿Qué se asegura? <span class="req">*</span></label><input name="objeto" placeholder="Depto 4B · Honda Civic 2022 · Plan médico familiar" required></div>
+                  <div class="field"><label>Aseguradora</label><input name="aseguradora" placeholder="Ej. GNP, Qualitas..."></div>
+                  <div class="field"><label>Suma asegurada ($)</label><input name="suma" type="number" min="0" step="0.01" placeholder="0.00"></div>
+                  <div class="field"><label>Prima ($/mes)</label><input name="prima" type="number" min="0" step="0.01" placeholder="0.00"></div>
+                  <div class="field"><label>Agente de venta</label><select name="agente"><option value="">— Sin asignar —</option></select></div>
+                  <div class="field"><label>Vigencia hasta</label><input name="vigencia" type="date"></div>
+                  <div class="field"><label>Estatus</label><select name="estatus"><option value="activa">Activa</option><option value="pendiente">Pendiente</option><option value="vencida">Vencida</option></select></div>
+                  <div class="field col-3"><label>Condiciones / coberturas</label><textarea name="condiciones" class="sm" placeholder="Coberturas, deducibles, exclusiones, observaciones..."></textarea></div>
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary btn-sm">Guardar póliza</button>
+                  <button type="reset" class="btn btn-ghost btn-sm" id="seg-pol-cancel" style="display:none">Cancelar edición</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="toolbar">
+              <div class="search"><input id="seg-pol-search" placeholder="Buscar asegurado, objeto, aseguradora..."></div>
+              <select id="seg-pol-ftipo"><option value="">Todos los tipos</option><option value="inmueble">🏢 Inmueble</option><option value="auto">🚗 Auto</option><option value="medico">⚕️ Médico</option></select>
+              <select id="seg-pol-festatus"><option value="">Todos los estatus</option><option value="activa">Activa</option><option value="pendiente">Pendiente</option><option value="vencida">Vencida</option></select>
+            </div>
+            <div class="table-scroll">
+              <table class="dtable">
+                <thead><tr><th>Tipo</th><th>Asegurado</th><th>Objeto asegurado</th><th>Beneficiario</th><th>Aseguradora</th><th>Suma</th><th>Prima</th><th>Agente</th><th>Estatus</th><th></th></tr></thead>
+                <tbody id="seg-pol-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- PANE: Cotizaciones -->
+          <div class="pane" id="seg-cotiza">
+            <div class="tip"><span class="i">💡</span><span>Captura varias cotizaciones para un mismo prospecto y compáralas lado a lado. La de menor prima se marca automáticamente como <strong>mejor opción</strong>.</span></div>
+            <div class="block">
+              <div class="block-head"><h3 id="seg-cot-title">Registrar cotización</h3></div>
+              <form id="seg-cot-form" autocomplete="off">
+                <input type="hidden" name="id">
+                <div class="form-grid">
+                  <div class="field"><label>Prospecto / asegurado <span class="req">*</span></label><input name="prospecto" placeholder="Nombre o referencia" required></div>
+                  <div class="field"><label>Tipo</label>
+                    <select name="tipo"><option value="inmueble">🏢 Inmueble</option><option value="auto">🚗 Auto</option><option value="medico">⚕️ Médico</option></select>
+                  </div>
+                  <div class="field"><label>Aseguradora <span class="req">*</span></label><input name="aseguradora" placeholder="Ej. Qualitas" required></div>
+                  <div class="field"><label>Prima ($/mes) <span class="req">*</span></label><input name="prima" type="number" min="0" step="0.01" placeholder="0.00" required></div>
+                  <div class="field"><label>Suma asegurada ($)</label><input name="suma" type="number" min="0" step="0.01" placeholder="0.00"></div>
+                  <div class="field"><label>Deducible (%)</label><input name="deducible" type="number" min="0" step="0.01" placeholder="0"></div>
+                  <div class="field col-3"><label>Cobertura / notas</label><textarea name="cobertura" class="sm" placeholder="Qué incluye esta cotización..."></textarea></div>
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary btn-sm">Guardar cotización</button>
+                  <button type="reset" class="btn btn-ghost btn-sm" id="seg-cot-cancel" style="display:none">Cancelar edición</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="toolbar">
+              <div class="search"><input id="seg-cot-search" placeholder="Buscar prospecto o aseguradora..."></div>
+              <select id="seg-cot-ftipo"><option value="">Todos los tipos</option><option value="inmueble">🏢 Inmueble</option><option value="auto">🚗 Auto</option><option value="medico">⚕️ Médico</option></select>
+            </div>
+            <div class="block" style="margin-bottom:14px">
+              <div class="block-head"><h3>Comparador de cotizaciones</h3><span class="hint">Ordenadas por prima</span></div>
+              <div class="cot-compare" id="seg-cot-compare"></div>
+            </div>
+            <div class="table-scroll">
+              <table class="dtable">
+                <thead><tr><th>Prospecto</th><th>Tipo</th><th>Aseguradora</th><th>Prima</th><th>Suma</th><th>Deducible</th><th></th></tr></thead>
+                <tbody id="seg-cot-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- PANE: Agentes -->
+          <div class="pane" id="seg-agentes">
+            <div class="block">
+              <div class="block-head"><h3 id="seg-ag-title">Registrar agente de venta</h3></div>
+              <form id="seg-ag-form" autocomplete="off">
+                <input type="hidden" name="id">
+                <div class="form-grid">
+                  <div class="field"><label>Nombre <span class="req">*</span></label><input name="nombre" placeholder="Nombre del agente" required></div>
+                  <div class="field"><label>Correo</label><input name="email" type="email" placeholder="agente@correo.com"></div>
+                  <div class="field"><label>Teléfono</label><input name="telefono" placeholder="55 0000 0000"></div>
+                  <div class="field"><label>Zona / cartera</label><input name="zona" placeholder="Ej. CDMX Sur"></div>
+                  <div class="field"><label>Comisión (%)</label><input name="comision" type="number" min="0" step="0.1" placeholder="0"></div>
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary btn-sm">Guardar agente</button>
+                  <button type="reset" class="btn btn-ghost btn-sm" id="seg-ag-cancel" style="display:none">Cancelar edición</button>
+                </div>
+              </form>
+            </div>
+            <div class="toolbar"><div class="search"><input id="seg-ag-search" placeholder="Buscar agente o zona..."></div></div>
+            <div class="table-scroll">
+              <table class="dtable">
+                <thead><tr><th>Agente</th><th>Correo</th><th>Teléfono</th><th>Zona</th><th>Comisión</th><th>Pólizas</th><th></th></tr></thead>
+                <tbody id="seg-ag-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============== MÓDULO RENTAS ============== -->
+        <section class="module" id="mod-rentas">
+          <div class="mod-head">
+            <div>
+              <span class="eyebrow">🏠 Módulo de Rentas y reportes</span>
+              <h2>Rentas generadas, cobradas y con adeudo</h2>
+              <p>Con un solo registro la información se comparte: el sistema calcula y muestra automáticamente si la renta está pagada o pendiente, los días de atraso y el interés moratorio.</p>
+            </div>
+          </div>
+
+          <div class="kpis" id="ren-kpis"></div>
+
+          <div class="block">
+            <div class="block-head"><h3 id="ren-title">Registrar renta</h3><span class="hint">El estatus se calcula solo</span></div>
+            <form id="ren-form" autocomplete="off">
+              <input type="hidden" name="id">
+              <div class="form-grid">
+                <div class="field"><label>Inquilino <span class="req">*</span></label><input name="inquilino" placeholder="Nombre del inquilino" required></div>
+                <div class="field"><label>Propiedad / unidad <span class="req">*</span></label><input name="unidad" placeholder="Ej. Las Torres · Depto 4B" required></div>
+                <div class="field"><label>Proyecto</label><input name="proyecto" placeholder="Ej. Residencial Las Torres" list="proyectos-list"></div>
+                <div class="field"><label>Periodo</label><input name="periodo" placeholder="Ej. Junio 2026"></div>
+                <div class="field"><label>Monto de renta ($) <span class="req">*</span></label><input name="monto" type="number" min="0" step="0.01" placeholder="0.00" required></div>
+                <div class="field"><label>Vencimiento <span class="req">*</span></label><input name="vence" type="date" required></div>
+                <div class="field"><label>Monto pagado ($)</label><input name="pagado" type="number" min="0" step="0.01" placeholder="0.00"></div>
+                <div class="field"><label>Fecha de pago</label><input name="fechaPago" type="date"></div>
+                <div class="field"><label>Interés moratorio (% mensual)</label><input name="tasaMora" type="number" min="0" step="0.01" placeholder="3"></div>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary btn-sm">Guardar renta</button>
+                <button type="reset" class="btn btn-ghost btn-sm" id="ren-cancel" style="display:none">Cancelar edición</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="toolbar">
+            <div class="search"><input id="ren-search" placeholder="Buscar inquilino, unidad o proyecto..."></div>
+            <select id="ren-festatus"><option value="">Todos los estatus</option><option value="pagada">Pagada</option><option value="parcial">Parcial</option><option value="pendiente">Pendiente</option><option value="vencida">Vencida</option></select>
+            <select id="ren-fproyecto"><option value="">Todos los proyectos</option></select>
+          </div>
+          <div class="table-scroll">
+            <table class="dtable">
+              <thead><tr><th>Inquilino</th><th>Unidad</th><th>Proyecto</th><th>Periodo</th><th>Vence</th><th>Renta</th><th>Pagado</th><th>Mora</th><th>Saldo</th><th>Estatus</th><th></th></tr></thead>
+              <tbody id="ren-body"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ============== MÓDULO AUXILIAR BANCARIO ============== -->
+        <section class="module" id="mod-auxiliar">
+          <div class="mod-head">
+            <div>
+              <span class="eyebrow">🏦 Módulo de Auxiliar Bancario</span>
+              <h2>Control de movimientos por auxiliar y proyecto</h2>
+              <p>Registra cada pago, transferencia o cobro. Maneja varios auxiliares por proyecto y consulta el saldo de cada uno en tiempo real.</p>
+            </div>
+          </div>
+
+          <div class="kpis" id="aux-kpis"></div>
+
+          <div class="subtabs">
+            <button class="subtab active" data-pane="aux-movs">Movimientos <span class="count-pill" id="aux-c-mv">0</span></button>
+            <button class="subtab" data-pane="aux-auxiliares">Auxiliares <span class="count-pill" id="aux-c-ax">0</span></button>
+          </div>
+
+          <!-- PANE: Movimientos -->
+          <div class="pane show" id="aux-movs">
+            <div class="block">
+              <div class="block-head"><h3 id="aux-mv-title">Registrar movimiento</h3><span class="hint">Pago · Transferencia · Cobro</span></div>
+              <form id="aux-mv-form" autocomplete="off">
+                <input type="hidden" name="id">
+                <div class="form-grid">
+                  <div class="field"><label>Auxiliar <span class="req">*</span></label><select name="auxiliar" id="aux-mv-auxsel" required><option value="">— Selecciona auxiliar —</option></select></div>
+                  <div class="field"><label>Tipo <span class="req">*</span></label>
+                    <select name="tipo" required><option value="cobro">⬇️ Cobro (ingreso)</option><option value="pago">⬆️ Pago (egreso)</option><option value="transferencia">🔁 Transferencia</option></select>
+                  </div>
+                  <div class="field"><label>Fecha <span class="req">*</span></label><input name="fecha" type="date" required></div>
+                  <div class="field col-2"><label>Concepto <span class="req">*</span></label><input name="concepto" placeholder="Descripción del movimiento" required></div>
+                  <div class="field"><label>Monto ($) <span class="req">*</span></label><input name="monto" type="number" min="0" step="0.01" placeholder="0.00" required></div>
+                  <div class="field"><label>Referencia</label><input name="referencia" placeholder="Folio, transferencia, cheque..."></div>
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary btn-sm">Guardar movimiento</button>
+                  <button type="reset" class="btn btn-ghost btn-sm" id="aux-mv-cancel" style="display:none">Cancelar edición</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="toolbar">
+              <div class="search"><input id="aux-mv-search" placeholder="Buscar concepto o referencia..."></div>
+              <select id="aux-mv-faux"><option value="">Todos los auxiliares</option></select>
+              <select id="aux-mv-ftipo"><option value="">Todos los tipos</option><option value="cobro">Cobro</option><option value="pago">Pago</option><option value="transferencia">Transferencia</option></select>
+            </div>
+            <div class="table-scroll">
+              <table class="dtable">
+                <thead><tr><th>Fecha</th><th>Auxiliar</th><th>Proyecto</th><th>Tipo</th><th>Concepto</th><th>Referencia</th><th>Cargo</th><th>Abono</th><th></th></tr></thead>
+                <tbody id="aux-mv-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- PANE: Auxiliares -->
+          <div class="pane" id="aux-auxiliares">
+            <div class="tip"><span class="i">💡</span><span>Un <strong>auxiliar</strong> es una cuenta o libreta de control. Puedes crear <strong>varios auxiliares por proyecto</strong> (ej. cuenta de rentas, cuenta de mantenimiento) y cada uno lleva su propio saldo.</span></div>
+            <div class="aux-balances" id="aux-bal-cards"></div>
+            <div class="block">
+              <div class="block-head"><h3 id="aux-ax-title">Crear auxiliar</h3></div>
+              <form id="aux-ax-form" autocomplete="off">
+                <input type="hidden" name="id">
+                <div class="form-grid">
+                  <div class="field"><label>Nombre del auxiliar <span class="req">*</span></label><input name="nombre" placeholder="Ej. Cuenta rentas BBVA" required></div>
+                  <div class="field"><label>Proyecto <span class="req">*</span></label><input name="proyecto" placeholder="Ej. Residencial Las Torres" list="proyectos-list" required></div>
+                  <div class="field"><label>Banco</label><input name="banco" placeholder="Ej. BBVA"></div>
+                  <div class="field"><label>No. de cuenta / CLABE</label><input name="cuenta" placeholder="Opcional"></div>
+                  <div class="field"><label>Saldo inicial ($)</label><input name="saldoInicial" type="number" step="0.01" placeholder="0.00"></div>
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary btn-sm">Guardar auxiliar</button>
+                  <button type="reset" class="btn btn-ghost btn-sm" id="aux-ax-cancel" style="display:none">Cancelar edición</button>
+                </div>
+              </form>
+            </div>
+            <div class="toolbar"><div class="search"><input id="aux-ax-search" placeholder="Buscar auxiliar, proyecto o banco..."></div></div>
+            <div class="table-scroll">
+              <table class="dtable">
+                <thead><tr><th>Auxiliar</th><th>Proyecto</th><th>Banco</th><th>Cuenta</th><th>Saldo inicial</th><th>Movimientos</th><th>Saldo actual</th><th></th></tr></thead>
+                <tbody id="aux-ax-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+</div>
+
+<datalist id="proyectos-list"></datalist>
+<div class="toast" id="toast"></div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="index.html"><span class="brand-mark">⌂</span><span>Gabriel Chernitsky<small>Property Management Cloud</small></span></a>
+        <p>Software de gestión de propiedades para administradores, agencias e inmobiliarias. Cobro de rentas, mantenimiento, portal de inquilinos y reportes en una sola plataforma.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <a href="funcionalidades.html">Funcionalidades</a>
+        <a href="precios.html">Precios</a>
+        <a href="app.html">Panel operativo</a>
+        <a href="contacto.html">Solicitar demo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Módulos</h4>
+        <a href="app.html#seguros">Seguros</a>
+        <a href="app.html#rentas">Rentas y reportes</a>
+        <a href="app.html#auxiliar">Auxiliar Bancario</a>
+        <a href="precios.html">Suscripciones SaaS</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="contacto.html">Escríbenos</a>
+        <a href="https://wa.me/5215594356241" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="contacto.html">Soporte</a>
+        <a class="footer-wa" href="https://wa.me/5215594356241" target="_blank" rel="noopener" style="margin-top:10px">💬 ¿Quieres tu sitio? Escríbenos por WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span data-year-now>2026</span> Gabriel Chernitsky · Property Management Cloud. Todos los derechos reservados.</p>
+      <p>Desarrollado por <a class="oc" href="https://wa.me/5215594356241" target="_blank" rel="noopener">Overcloud</a></p>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5215594356241" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+
+<script src="main.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
