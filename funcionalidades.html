@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Funcionalidades — Gabriel Chernitsky | Gestión de propiedades</title>
+<meta name="description" content="Las 16 funcionalidades de la plataforma: multi-tenant, cobro automático de rentas, Stripe, recibos en PDF, tickets, firma digital, documentos en S3, calendario, roles y permisos, API REST y auditoría.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232c6fd6'/%3E%3Ctext x='50%25' y='54%25' font-size='38' text-anchor='middle' dominant-baseline='middle' font-family='Arial' fill='white'%3E%E2%8C%82%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <nav class="nav">
+      <a class="brand" href="index.html"><span class="brand-mark">⌂</span><span>Gabriel Chernitsky<small>Property Management Cloud</small></span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="funcionalidades.html" class="active">Funcionalidades</a></li>
+        <li><a href="precios.html">Precios</a></li>
+        <li><a href="index.html#como-funciona">Cómo funciona</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="contacto.html">Iniciar sesión</a>
+        <a class="btn btn-primary" href="precios.html">Prueba gratis</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<section class="pagehero">
+  <div class="container">
+    <span class="eyebrow">Funcionalidades</span>
+    <h1>Todo lo que necesitas para administrar tu cartera</h1>
+    <p>16 módulos pensados para administradores, agencias e inmobiliarias. Automatiza la cobranza, profesionaliza la operación y dale a tus inquilinos una experiencia moderna.</p>
+  </div>
+</section>
+
+<!-- Bloque 1: Núcleo -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal" style="margin-bottom:36px">
+      <span class="eyebrow">Plataforma y seguridad</span>
+      <h2>Cimientos sólidos y seguros</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card reveal" id="multitenant"><div class="ico">🏢</div><h3>Arquitectura multi-tenant</h3><p>Cada organización opera en un entorno completamente aislado, con sus propios datos, configuración y subdominio o slug único (ej. miempresa.app.com).</p></div>
+      <div class="card reveal" id="seguridad"><div class="ico">🔐</div><h3>Autenticación y seguridad</h3><p>Login con email y contraseña, verificación de email, recuperación de contraseña, sesiones por dispositivo y opción de 2FA.</p></div>
+      <div class="card reveal" id="roles"><div class="ico">🧑‍💼</div><h3>Roles y permisos granulares</h3><p>Permisos por módulo y acción (ver, crear, editar, eliminar) configurables por rol dentro de cada organización.</p></div>
+      <div class="card reveal" id="auditoria"><div class="ico">📜</div><h3>Logs de auditoría</h3><p>Registro de todas las acciones críticas: pagos, modificaciones de contrato y cambios de configuración, para trazabilidad y compliance.</p></div>
+      <div class="card reveal" id="api"><div class="ico">🧩</div><h3>API REST documentada</h3><p>API interna robusta que sustenta el frontend y que puede exponerse parcialmente para integraciones futuras con sistemas externos.</p></div>
+      <div class="card reveal" id="importacion"><div class="ico">📥</div><h3>Importación masiva de datos</h3><p>Importa propiedades, unidades e inquilinos desde CSV o Excel para un onboarding ágil de carteras existentes.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Bloque 2: Cobranza y pagos -->
+<section class="section" style="background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line)">
+  <div class="container">
+    <div class="section-head reveal" style="margin-bottom:36px">
+      <span class="eyebrow">Cobranza y pagos</span>
+      <h2>Que el dinero entre solo</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card reveal" id="cobranza"><div class="ico">💰</div><h3>Cobro automático de rentas</h3><p>Generación automática de cargos al inicio de cada período de renta definido en el contrato, con notificación al inquilino vía email.</p></div>
+      <div class="card reveal" id="stripe"><div class="ico">💳</div><h3>Pasarela de pago (Stripe)</h3><p>Integración completa con Stripe para pagos con tarjeta desde el portal del inquilino, con webhooks para confirmación y conciliación automáticas.</p></div>
+      <div class="card reveal" id="recibos"><div class="ico">🧾</div><h3>Recibos de pago en PDF</h3><p>Recibos personalizados con logo de la organización, datos fiscales, período y monto, descargables desde ambos portales.</p></div>
+      <div class="card reveal" id="morosidad"><div class="ico">🚨</div><h3>Alertas de morosidad</h3><p>Detección automática de pagos vencidos con recordatorios escalonados al inquilino y alerta al administrador.</p></div>
+      <div class="card reveal" id="suscripciones"><div class="ico">🔁</div><h3>Suscripciones SaaS con Stripe Billing</h3><p>Planes mensual/anual para los clientes de la plataforma, cobro recurrente automatizado, prueba gratuita y upgrade/downgrade de plan.</p></div>
+      <div class="card reveal" id="notificaciones"><div class="ico">🔔</div><h3>Sistema de notificaciones</h3><p>Avisos por email y en la plataforma: renta por vencer, pago recibido, ticket actualizado, contrato por expirar y nuevos mensajes.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Bloque 3: Operación -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal" style="margin-bottom:36px">
+      <span class="eyebrow">Operación diaria</span>
+      <h2>El día a día, bajo control</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card reveal" id="firma"><div class="ico">✍️</div><h3>Firma digital de contratos</h3><p>Flujo de firma digital integrado (tipo DocuSign) o carga de contrato en PDF firmado, con almacenamiento seguro y acceso para ambas partes.</p></div>
+      <div class="card reveal" id="documentos"><div class="ico">📁</div><h3>Gestión de documentos</h3><p>Carga y organiza documentos por propiedad, unidad e inquilino (contratos, identificaciones, actas, planos) con almacenamiento en la nube (S3).</p></div>
+      <div class="card reveal" id="calendario"><div class="ico">📅</div><h3>Calendario de vencimientos</h3><p>Vista de calendario con vencimientos de contratos, próximas rentas a cobrar y mantenimientos programados.</p></div>
+      <div class="card reveal" id="ocupacion"><div class="ico">📊</div><h3>Control de ocupación</h3><p>Seguimiento en tiempo real del estatus de cada unidad, con historial de inquilinos anteriores y períodos de vacancia.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Showcase: portal inquilino mock -->
+<section class="section" style="background:var(--grad-soft)">
+  <div class="container">
+    <div class="split">
+      <div class="split-copy reveal">
+        <span class="eyebrow">Portal del inquilino</span>
+        <h2>Una experiencia que tus inquilinos van a agradecer</h2>
+        <p class="lead">Pagar la renta, descargar recibos y reportar una fuga, todo desde el celular. Menos llamadas para ti, más comodidad para ellos.</p>
+        <ul class="feat-list">
+          <li>Pago en línea con tarjeta vía Stripe</li>
+          <li>Historial de pagos y recibos en PDF</li>
+          <li>Tickets de mantenimiento con seguimiento</li>
+          <li>Acceso a sus contratos y documentos</li>
+        </ul>
+      </div>
+      <div class="split-media reveal">
+        <div class="mock">
+          <div class="mock-bar"><i></i><i></i><i></i><small>miempresa.app.com/portal</small></div>
+          <div class="mock-body">
+            <div class="mock-row">
+              <div class="mini-stat"><div class="k">Tu renta</div><div class="v">$12,300</div></div>
+              <div class="mini-stat"><div class="k">Estatus</div><div class="v up">Al día</div></div>
+            </div>
+            <div class="mock-list">
+              <div class="mock-li"><span class="av">📄</span><span><span class="nm">Recibo junio 2026</span><br><span class="sub">Pagado el 01/06</span></span><span class="pill pill-ok">PDF</span></div>
+              <div class="mock-li"><span class="av">🛠️</span><span><span class="nm">Ticket #218</span><br><span class="sub">Fuga en baño</span></span><span class="pill pill-warn">En curso</span></div>
+              <div class="mock-li"><span class="av">📄</span><span><span class="nm">Contrato vigente</span><br><span class="sub">Vence 31/12/2026</span></span><span class="pill pill-ok">Firmado</span></div>
+            </div>
+            <a class="btn btn-primary btn-block" style="margin-top:14px" href="#">Pagar renta de julio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-band reveal">
+      <h2>¿Listo para verlo con tu propia cartera?</h2>
+      <p>Agenda una demo personalizada o empieza tu prueba gratuita de 14 días hoy mismo.</p>
+      <div class="acts">
+        <a class="btn btn-light btn-lg" href="precios.html">Ver precios</a>
+        <a class="btn btn-wa btn-lg" href="https://wa.me/5215594356241" target="_blank" rel="noopener">💬 Hablar por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="index.html"><span class="brand-mark">⌂</span><span>Gabriel Chernitsky<small>Property Management Cloud</small></span></a>
+        <p>Software de gestión de propiedades para administradores, agencias e inmobiliarias. Cobro de rentas, mantenimiento, portal de inquilinos y reportes en una sola plataforma.</p>
+      </div>
+      <div class="footer-col"><h4>Producto</h4><a href="funcionalidades.html">Funcionalidades</a><a href="precios.html">Precios</a><a href="index.html#como-funciona">Cómo funciona</a><a href="contacto.html">Solicitar demo</a></div>
+      <div class="footer-col"><h4>Soluciones</h4><a href="funcionalidades.html">Para agencias</a><a href="funcionalidades.html">Para administradores</a><a href="funcionalidades.html">Para inmobiliarias</a><a href="precios.html">Suscripciones SaaS</a></div>
+      <div class="footer-col"><h4>Contacto</h4><a href="contacto.html">Escríbenos</a><a href="https://wa.me/5215594356241" target="_blank" rel="noopener">WhatsApp</a><a href="contacto.html">Soporte</a><a class="footer-wa" href="https://wa.me/5215594356241" target="_blank" rel="noopener" style="margin-top:10px">💬 ¿Quieres tu sitio? Escríbenos por WhatsApp</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span data-year-now>2026</span> Gabriel Chernitsky · Property Management Cloud. Todos los derechos reservados.</p>
+      <p>Desarrollado por <a class="oc" href="https://wa.me/5215594356241" target="_blank" rel="noopener">Overcloud</a></p>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5215594356241" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+<script src="main.js"></script>
+</body>
+</html>

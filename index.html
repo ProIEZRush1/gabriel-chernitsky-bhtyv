@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gabriel Chernitsky — Software de gestión de propiedades y rentas</title>
+<meta name="description" content="Plataforma SaaS multi-tenant para administradores, agencias e inmobiliarias: cobro automático de rentas, pagos con Stripe, tickets de mantenimiento, portal de inquilinos y reportes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232c6fd6'/%3E%3Ctext x='50%25' y='54%25' font-size='38' text-anchor='middle' dominant-baseline='middle' font-family='Arial' fill='white'%3E%E2%8C%82%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">⌂</span>
+        <span>Gabriel Chernitsky<small>Property Management Cloud</small></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Inicio</a></li>
+        <li><a href="funcionalidades.html">Funcionalidades</a></li>
+        <li><a href="precios.html">Precios</a></li>
+        <li><a href="index.html#como-funciona">Cómo funciona</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="contacto.html">Iniciar sesión</a>
+        <a class="btn btn-primary" href="precios.html">Prueba gratis</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-copy">
+      <span class="eyebrow">🏢 Software para administración de inmuebles</span>
+      <h1>Administra rentas, contratos y mantenimiento <span class="grad">desde una sola plataforma</span></h1>
+      <p class="lead">Gabriel Chernitsky es el SaaS multi-tenant para administradores, agencias e inmobiliarias. Cobra rentas en automático, recibe pagos con Stripe, gestiona tickets y dale a tus inquilinos un portal moderno.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="precios.html">Comenzar prueba de 14 días</a>
+        <a class="btn btn-ghost btn-lg" href="funcionalidades.html">Ver funcionalidades →</a>
+      </div>
+      <div class="hero-trust">
+        <span>✅ Sin tarjeta para empezar</span>
+        <span>🔒 Datos aislados por organización</span>
+        <span>💳 Pagos seguros con Stripe</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="mock">
+        <div class="mock-bar"><i></i><i></i><i></i><small>miempresa.app.com — Panel</small></div>
+        <div class="mock-body">
+          <div class="mock-row">
+            <div class="mini-stat"><div class="k">Cobrado este mes</div><div class="v up">$842,500</div></div>
+            <div class="mini-stat"><div class="k">Ocupación</div><div class="v">94%</div></div>
+            <div class="mini-stat"><div class="k">Morosidad</div><div class="v">3.1%</div></div>
+          </div>
+          <div class="mock-list">
+            <div class="mock-li"><span class="av">RT</span><span><span class="nm">Residencial Las Torres</span><br><span class="sub">Depto 4B · Renta junio</span></span><span class="pill pill-ok">Pagado</span></div>
+            <div class="mock-li"><span class="av">MC</span><span><span class="nm">María Castillo</span><br><span class="sub">Local 12 · Vence en 3 días</span></span><span class="pill pill-warn">Por vencer</span></div>
+            <div class="mock-li"><span class="av">JR</span><span><span class="nm">Jorge Ramírez</span><br><span class="sub">Depto 7A · 8 días de atraso</span></span><span class="pill pill-due">Vencido</span></div>
+            <div class="mock-li"><span class="av">PV</span><span><span class="nm">Plaza Vértice</span><br><span class="sub">Ticket #218 · Fuga en baño</span></span><span class="pill pill-warn">En curso</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="float-card">
+        <span class="ic">💸</span>
+        <span><span class="t">+$12,300</span><span class="s">Pago recibido vía Stripe</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="strip">
+  <div class="container">
+    <small>Diseñado para todo tipo de cartera inmobiliaria</small>
+    <div class="strip-logos">
+      <span>🏢 Agencias</span>
+      <span>🔑 Administradores</span>
+      <span>🏘️ Inmobiliarias</span>
+      <span>🏬 Plazas y locales</span>
+      <span>🏠 Renta residencial</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats section--tight">
+  <div class="container">
+    <div class="grid">
+      <div class="stat"><div class="num"><span data-count="98.6" data-suffix="%">0</span></div><div class="lbl">Cobranza puntual promedio</div></div>
+      <div class="stat"><div class="num"><span data-count="12">0</span>h</div><div class="lbl">Ahorradas por semana en administración</div></div>
+      <div class="stat"><div class="num"><span data-count="24500" data-suffix="+">0</span></div><div class="lbl">Unidades gestionadas en la plataforma</div></div>
+      <div class="stat"><div class="num"><span data-count="99.9" data-suffix="%">0</span></div><div class="lbl">Disponibilidad garantizada (SLA)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="funcionalidades">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Todo en un solo lugar</span>
+      <h2>Una plataforma que cubre todo el ciclo de tu inmueble</h2>
+      <p>Desde la firma del contrato hasta el recibo de pago en PDF: automatiza lo repetitivo y enfócate en hacer crecer tu cartera.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card reveal"><div class="ico">💰</div><h3>Cobro automático de rentas</h3><p>Genera cargos al inicio de cada período según el contrato y notifica al inquilino por email, sin intervención manual.</p></div>
+      <div class="card reveal"><div class="ico">💳</div><h3>Pagos con Stripe</h3><p>Tus inquilinos pagan con tarjeta desde su portal. Webhooks confirman y concilian cada pago en tiempo real.</p></div>
+      <div class="card reveal"><div class="ico">🧾</div><h3>Recibos en PDF</h3><p>Recibos personalizados con tu logo, datos fiscales, período y monto, descargables desde ambos portales.</p></div>
+      <div class="card reveal"><div class="ico">🛠️</div><h3>Tickets de mantenimiento</h3><p>El inquilino reporta, tú asignas y das seguimiento. Estatus y notificaciones en cada actualización.</p></div>
+      <div class="card reveal"><div class="ico">🚨</div><h3>Alertas de morosidad</h3><p>Detección automática de vencidos con recordatorios escalonados al inquilino y alerta inmediata al administrador.</p></div>
+      <div class="card reveal"><div class="ico">✍️</div><h3>Firma digital de contratos</h3><p>Flujo de firma electrónica integrado o carga de PDF firmado, con almacenamiento seguro para ambas partes.</p></div>
+      <div class="card reveal"><div class="ico">📁</div><h3>Gestión de documentos</h3><p>Organiza contratos, identificaciones, actas y planos por propiedad, unidad e inquilino con respaldo en S3.</p></div>
+      <div class="card reveal"><div class="ico">📅</div><h3>Calendario de vencimientos</h3><p>Visualiza contratos por expirar, rentas a cobrar y mantenimientos programados en una sola vista.</p></div>
+      <div class="card reveal"><div class="ico">📊</div><h3>Control de ocupación</h3><p>Estatus de cada unidad en tiempo real, historial de inquilinos y períodos de vacancia.</p></div>
+    </div>
+    <div style="text-align:center; margin-top:38px" class="reveal">
+      <a class="btn btn-ghost btn-lg" href="funcionalidades.html">Ver las 16 funcionalidades →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SPLIT 1: cobranza -->
+<section class="section" style="background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line)">
+  <div class="container">
+    <div class="split">
+      <div class="split-copy reveal">
+        <span class="eyebrow">Cobranza inteligente</span>
+        <h2>Que la renta se cobre sola</h2>
+        <p class="lead">Configura el período de cada contrato una vez y olvídate. La plataforma genera el cargo, avisa al inquilino y registra el pago apenas entra por Stripe.</p>
+        <ul class="feat-list">
+          <li>Cargos automáticos al inicio de cada ciclo de renta</li>
+          <li>Notificación por email antes y al momento del vencimiento</li>
+          <li>Conciliación automática vía webhooks de Stripe</li>
+          <li>Recordatorios escalonados para pagos atrasados</li>
+        </ul>
+        <div style="margin-top:24px"><a class="btn btn-primary" href="funcionalidades.html#cobranza">Conocer el módulo de cobranza</a></div>
+      </div>
+      <div class="split-media reveal">
+        <div class="panel panel-grad">
+          <h3 style="margin-bottom:18px">Recaudación · Junio 2026</h3>
+          <div class="bar"><div class="top"><span>Cobrado a tiempo</span><span>82%</span></div><div class="track"><div class="fill" style="width:82%"></div></div></div>
+          <div class="bar"><div class="top"><span>Pagado con atraso</span><span>15%</span></div><div class="track"><div class="fill" style="width:15%"></div></div></div>
+          <div class="bar"><div class="top"><span>Pendiente</span><span>3%</span></div><div class="track"><div class="fill" style="width:3%"></div></div></div>
+          <div style="margin-top:20px; display:flex; justify-content:space-between; align-items:flex-end">
+            <div><div style="font-size:.8rem; color:#dceaff; font-weight:700">Total recaudado</div><div class="big" style="font-size:2rem; font-weight:800">$842,500</div></div>
+            <span class="pill pill-ok" style="background:rgba(255,255,255,.2); color:#bdf6e2">↑ 9% vs. mayo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPLIT 2: calendario -->
+<section class="section">
+  <div class="container">
+    <div class="split split--rev">
+      <div class="split-media reveal">
+        <div class="panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px">
+            <h3>Junio 2026</h3>
+            <span class="eyebrow">Vencimientos</span>
+          </div>
+          <div class="cal">
+            <span class="dow">L</span><span class="dow">M</span><span class="dow">M</span><span class="dow">J</span><span class="dow">V</span><span class="dow">S</span><span class="dow">D</span>
+            <span class="d muted">26</span><span class="d muted">27</span><span class="d muted">28</span><span class="d muted">29</span><span class="d muted">30</span><span class="d muted">31</span><span class="d pay has">1</span>
+            <span class="d">2</span><span class="d">3</span><span class="d has">4</span><span class="d">5</span><span class="d">6</span><span class="d">7</span><span class="d">8</span>
+            <span class="d">9</span><span class="d due has">10</span><span class="d">11</span><span class="d">12</span><span class="d">13</span><span class="d">14</span><span class="d pay has">15</span>
+            <span class="d">16</span><span class="d">17</span><span class="d has">18</span><span class="d">19</span><span class="d">20</span><span class="d">21</span><span class="d">22</span>
+            <span class="d">23</span><span class="d">24</span><span class="d due has">25</span><span class="d">26</span><span class="d">27</span><span class="d">28</span><span class="d">29</span>
+          </div>
+          <div style="display:flex; gap:16px; margin-top:16px; font-size:.78rem; font-weight:700; color:var(--muted)">
+            <span>🟢 Renta a cobrar</span><span>🔵 Mantenimiento</span><span>🔴 Contrato por vencer</span>
+          </div>
+        </div>
+      </div>
+      <div class="split-copy reveal">
+        <span class="eyebrow">Nunca pierdas una fecha</span>
+        <h2>Todo tu mes, en un calendario</h2>
+        <p class="lead">Contratos por expirar, rentas a cobrar y mantenimientos programados en una sola vista. Recibe avisos para actuar antes de que algo se te pase.</p>
+        <ul class="feat-list">
+          <li>Vencimientos de contratos con alertas anticipadas</li>
+          <li>Próximas rentas a cobrar por propiedad y unidad</li>
+          <li>Mantenimientos programados y recurrentes</li>
+          <li>Sincronización con notificaciones por email y en la plataforma</li>
+        </ul>
+        <div style="margin-top:24px"><a class="btn btn-primary" href="funcionalidades.html#calendario">Ver calendario y reportes</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="como-funciona" style="background:var(--grad-soft)">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Onboarding sin fricción</span>
+      <h2>De cero a cobrando en 4 pasos</h2>
+      <p>Importa tu cartera existente y empieza a operar el mismo día. Sin instalaciones, sin servidores que mantener.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">1</div><h3>Crea tu organización</h3><p>Registra tu agencia con su slug único (miempresa.app.com) y entorno totalmente aislado.</p></div>
+      <div class="step reveal"><div class="n">2</div><h3>Importa tu cartera</h3><p>Sube propiedades, unidades e inquilinos desde CSV o Excel en minutos.</p></div>
+      <div class="step reveal"><div class="n">3</div><h3>Configura contratos</h3><p>Define períodos de renta, montos y firma digital. Conecta tu cuenta de Stripe.</p></div>
+      <div class="step reveal"><div class="n">4</div><h3>Cobra en automático</h3><p>La plataforma genera cargos, notifica y concilia pagos. Tú solo supervisas.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTALES split -->
+<section class="section" style="background:#fff; border-top:1px solid var(--line)">
+  <div class="container">
+    <div class="split">
+      <div class="split-copy reveal">
+        <span class="eyebrow">Dos portales, una experiencia</span>
+        <h2>Para tu equipo y para tus inquilinos</h2>
+        <p class="lead">Roles y permisos granulares por módulo y acción para tu equipo. Un portal claro y moderno para que el inquilino pague, reporte y consulte sus documentos.</p>
+        <ul class="feat-list">
+          <li>Permisos por rol: ver, crear, editar y eliminar por módulo</li>
+          <li>Portal del inquilino: pago en línea, recibos y tickets</li>
+          <li>Sesiones por dispositivo y 2FA opcional</li>
+          <li>Logs de auditoría de todas las acciones críticas</li>
+        </ul>
+      </div>
+      <div class="split-media reveal">
+        <div class="grid-2" style="gap:16px">
+          <div class="card"><div class="ico">👥</div><h3>Panel del administrador</h3><p>Control total de propiedades, cobranza, reportes y equipo.</p></div>
+          <div class="card"><div class="ico">🙋</div><h3>Portal del inquilino</h3><p>Paga, descarga recibos y abre tickets desde el celular.</p></div>
+          <div class="card"><div class="ico">🔐</div><h3>Seguridad 2FA</h3><p>Verificación de email, recuperación y doble factor.</p></div>
+          <div class="card"><div class="ico">🧩</div><h3>API REST</h3><p>Documentada, lista para integraciones futuras.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Clientes que confían</span>
+      <h2>Administradores que ya recuperaron su tiempo</h2>
+    </div>
+    <div class="grid-3">
+      <div class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Pasamos de perseguir pagos por WhatsApp a tener todo cobrado en automático. La morosidad bajó de 14% a 3% en tres meses."</p>
+        <div class="who"><span class="av">LM</span><span><span class="nm">Laura Méndez</span><br><span class="rl">Directora, Inmobiliaria Méndez</span></span></div>
+      </div>
+      <div class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>"El portal del inquilino nos quitó cientos de llamadas. Ahora reportan tickets y pagan solos. Mi equipo dejó de apagar incendios."</p>
+        <div class="who"><span class="av">CR</span><span><span class="nm">Carlos Rivas</span><br><span class="rl">Administrador, Grupo Vértice</span></span></div>
+      </div>
+      <div class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Importamos 600 unidades desde Excel en una tarde. Los recibos en PDF con nuestro logo le dan una imagen profesional a la agencia."</p>
+        <div class="who"><span class="av">AS</span><span><span class="nm">Ana Solís</span><br><span class="rl">Socia, Solís Bienes Raíces</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="background:var(--grad-soft)">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2>Lo que más nos preguntan</h2>
+    </div>
+    <div class="faq">
+      <div class="faq-item reveal"><button class="faq-q">¿Qué significa que sea multi-tenant?<span class="x">+</span></button><div class="faq-a"><p>Cada organización (agencia o administrador) opera en un entorno completamente aislado, con sus propios datos, configuración y subdominio o slug único como miempresa.app.com. Tus datos jamás se mezclan con los de otra organización.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">¿Cómo funcionan los pagos con Stripe?<span class="x">+</span></button><div class="faq-a"><p>Conectas tu cuenta de Stripe y tus inquilinos pagan con tarjeta de crédito o débito desde su portal. Los webhooks confirman cada pago en automático y concilian el saldo del contrato sin que tengas que registrar nada a mano.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">¿Puedo migrar mi cartera actual?<span class="x">+</span></button><div class="faq-a"><p>Sí. La importación masiva acepta archivos CSV y Excel para cargar propiedades, unidades e inquilinos. Es ideal para hacer onboarding rápido de carteras grandes ya existentes.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">¿Los contratos se pueden firmar en línea?<span class="x">+</span></button><div class="faq-a"><p>Cuentas con un flujo de firma digital integrado, o puedes cargar el PDF ya firmado. Todo queda almacenado de forma segura y accesible para ambas partes.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">¿Es seguro? ¿Tienen 2FA?<span class="x">+</span></button><div class="faq-a"><p>Sí. Login con email y contraseña, verificación de email, recuperación de contraseña, sesiones por dispositivo y autenticación de dos factores (2FA) opcional. Además, registramos logs de auditoría de todas las acciones críticas.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">¿Hay período de prueba?<span class="x">+</span></button><div class="faq-a"><p>Sí, todos los planes incluyen 14 días de prueba gratuita sin tarjeta. Puedes hacer upgrade, downgrade o cancelar cuando quieras gracias a Stripe Billing.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-band reveal">
+      <h2>Empieza a cobrar en automático esta semana</h2>
+      <p>Únete a las agencias e inmobiliarias que ya administran su cartera sin hojas de cálculo. Prueba 14 días gratis, sin tarjeta.</p>
+      <div class="acts">
+        <a class="btn btn-light btn-lg" href="precios.html">Ver planes y precios</a>
+        <a class="btn btn-wa btn-lg" href="https://wa.me/5215594356241" target="_blank" rel="noopener">💬 Hablar por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="index.html"><span class="brand-mark">⌂</span><span>Gabriel Chernitsky<small>Property Management Cloud</small></span></a>
+        <p>Software de gestión de propiedades para administradores, agencias e inmobiliarias. Cobro de rentas, mantenimiento, portal de inquilinos y reportes en una sola plataforma.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <a href="funcionalidades.html">Funcionalidades</a>
+        <a href="precios.html">Precios</a>
+        <a href="index.html#como-funciona">Cómo funciona</a>
+        <a href="contacto.html">Solicitar demo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Soluciones</h4>
+        <a href="funcionalidades.html">Para agencias</a>
+        <a href="funcionalidades.html">Para administradores</a>
+        <a href="funcionalidades.html">Para inmobiliarias</a>
+        <a href="precios.html">Suscripciones SaaS</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="contacto.html">Escríbenos</a>
+        <a href="https://wa.me/5215594356241" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="contacto.html">Soporte</a>
+        <a class="footer-wa" href="https://wa.me/5215594356241" target="_blank" rel="noopener" style="margin-top:10px">💬 ¿Quieres tu sitio? Escríbenos por WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span data-year-now>2026</span> Gabriel Chernitsky · Property Management Cloud. Todos los derechos reservados.</p>
+      <p>Desarrollado por <a class="oc" href="https://wa.me/5215594356241" target="_blank" rel="noopener">Overcloud</a></p>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5215594356241" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+
+<script src="main.js"></script>
+</body>
+</html>

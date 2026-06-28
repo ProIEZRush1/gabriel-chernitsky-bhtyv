@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto y demo — Gabriel Chernitsky | Gestión de propiedades</title>
+<meta name="description" content="Agenda una demo o solicita tu prueba gratuita. Escríbenos y un especialista te contactará en menos de 24 horas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232c6fd6'/%3E%3Ctext x='50%25' y='54%25' font-size='38' text-anchor='middle' dominant-baseline='middle' font-family='Arial' fill='white'%3E%E2%8C%82%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <nav class="nav">
+      <a class="brand" href="index.html"><span class="brand-mark">⌂</span><span>Gabriel Chernitsky<small>Property Management Cloud</small></span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="funcionalidades.html">Funcionalidades</a></li>
+        <li><a href="precios.html">Precios</a></li>
+        <li><a href="index.html#como-funciona">Cómo funciona</a></li>
+        <li><a href="contacto.html" class="active">Contacto</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="contacto.html">Iniciar sesión</a>
+        <a class="btn btn-primary" href="precios.html">Prueba gratis</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<section class="pagehero">
+  <div class="container">
+    <span class="eyebrow">Contacto</span>
+    <h1>Hablemos de tu cartera</h1>
+    <p>Cuéntanos cuántas unidades administras y qué necesitas automatizar. Te mostramos la plataforma con tus propios escenarios.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:48px">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- Form -->
+      <form class="form reveal" id="contact-form">
+        <h2 style="font-size:1.5rem; margin-bottom:6px">Solicita tu demo gratuita</h2>
+        <p style="margin-bottom:22px">Respuesta en menos de 24 horas hábiles.</p>
+        <div class="form-row">
+          <div class="field"><label for="nombre">Nombre completo</label><input id="nombre" name="nombre" type="text" placeholder="Gabriel Chernitsky" required></div>
+          <div class="field"><label for="empresa">Empresa / Agencia</label><input id="empresa" name="empresa" type="text" placeholder="Mi Inmobiliaria"></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="email">Correo electrónico</label><input id="email" name="email" type="email" placeholder="tu@correo.com" required></div>
+          <div class="field"><label for="tel">Teléfono / WhatsApp</label><input id="tel" name="tel" type="tel" placeholder="+52 55 0000 0000"></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="perfil">¿Qué te describe mejor?</label>
+            <select id="perfil" name="perfil">
+              <option>Administrador independiente</option>
+              <option>Agencia inmobiliaria</option>
+              <option>Inmobiliaria / desarrolladora</option>
+              <option>Grupo con varias sucursales</option>
+            </select>
+          </div>
+          <div class="field"><label for="unidades">Unidades que administras</label>
+            <select id="unidades" name="unidades">
+              <option>1 – 25 unidades</option>
+              <option>26 – 150 unidades</option>
+              <option>151 – 500 unidades</option>
+              <option>Más de 500 unidades</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label for="msg">Cuéntanos qué necesitas</label><textarea id="msg" name="mensaje" placeholder="Quiero automatizar el cobro de rentas y dar un portal a mis inquilinos…"></textarea></div>
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Enviar solicitud</button>
+        <div class="form-msg" role="status"></div>
+      </form>
+
+      <!-- Info -->
+      <div class="reveal">
+        <div class="info-card"><div class="ic">💬</div><div><div class="t">WhatsApp</div><a class="s" href="https://wa.me/5215594356241" target="_blank" rel="noopener">+52 1 55 9435 6241</a><div class="s">Atención inmediata, lun–vie 9:00–19:00</div></div></div>
+        <div class="info-card"><div class="ic">✉️</div><div><div class="t">Correo</div><a class="s" href="mailto:hola@gabrielchernitsky.app">hola@gabrielchernitsky.app</a><div class="s">Respondemos en menos de 24 h</div></div></div>
+        <div class="info-card"><div class="ic">🕑</div><div><div class="t">Horario</div><div class="s">Lunes a viernes · 9:00 a 19:00 (CDMX)</div><div class="s">Soporte para clientes 24/7</div></div></div>
+        <div class="info-card"><div class="ic">🚀</div><div><div class="t">¿Prefieres empezar ya?</div><div class="s">Crea tu organización y prueba 14 días gratis, sin tarjeta.</div><a class="btn btn-ghost" style="margin-top:12px" href="precios.html">Ver planes</a></div></div>
+        <div class="panel panel-grad" style="margin-top:4px">
+          <h3 style="margin-bottom:10px">¿Quieres un sitio como este?</h3>
+          <p style="color:#dceaff; margin-bottom:16px">En Overcloud diseñamos y desarrollamos tu plataforma web a la medida.</p>
+          <a class="btn btn-wa btn-block" href="https://wa.me/5215594356241" target="_blank" rel="noopener">💬 Escríbenos por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="index.html"><span class="brand-mark">⌂</span><span>Gabriel Chernitsky<small>Property Management Cloud</small></span></a>
+        <p>Software de gestión de propiedades para administradores, agencias e inmobiliarias. Cobro de rentas, mantenimiento, portal de inquilinos y reportes en una sola plataforma.</p>
+      </div>
+      <div class="footer-col"><h4>Producto</h4><a href="funcionalidades.html">Funcionalidades</a><a href="precios.html">Precios</a><a href="index.html#como-funciona">Cómo funciona</a><a href="contacto.html">Solicitar demo</a></div>
+      <div class="footer-col"><h4>Soluciones</h4><a href="funcionalidades.html">Para agencias</a><a href="funcionalidades.html">Para administradores</a><a href="funcionalidades.html">Para inmobiliarias</a><a href="precios.html">Suscripciones SaaS</a></div>
+      <div class="footer-col"><h4>Contacto</h4><a href="contacto.html">Escríbenos</a><a href="https://wa.me/5215594356241" target="_blank" rel="noopener">WhatsApp</a><a href="contacto.html">Soporte</a><a class="footer-wa" href="https://wa.me/5215594356241" target="_blank" rel="noopener" style="margin-top:10px">💬 ¿Quieres tu sitio? Escríbenos por WhatsApp</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span data-year-now>2026</span> Gabriel Chernitsky · Property Management Cloud. Todos los derechos reservados.</p>
+      <p>Desarrollado por <a class="oc" href="https://wa.me/5215594356241" target="_blank" rel="noopener">Overcloud</a></p>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5215594356241" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+<script src="main.js"></script>
+</body>
+</html>

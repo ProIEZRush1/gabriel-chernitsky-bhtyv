@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Precios y planes — Gabriel Chernitsky | Gestión de propiedades</title>
+<meta name="description" content="Planes de suscripción mensual o anual con prueba gratuita de 14 días. Cobro recurrente con Stripe Billing, upgrade y downgrade cuando quieras.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232c6fd6'/%3E%3Ctext x='50%25' y='54%25' font-size='38' text-anchor='middle' dominant-baseline='middle' font-family='Arial' fill='white'%3E%E2%8C%82%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <nav class="nav">
+      <a class="brand" href="index.html"><span class="brand-mark">⌂</span><span>Gabriel Chernitsky<small>Property Management Cloud</small></span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="funcionalidades.html">Funcionalidades</a></li>
+        <li><a href="precios.html" class="active">Precios</a></li>
+        <li><a href="index.html#como-funciona">Cómo funciona</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="contacto.html">Iniciar sesión</a>
+        <a class="btn btn-primary" href="#planes">Prueba gratis</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<section class="pagehero">
+  <div class="container">
+    <span class="eyebrow">Precios</span>
+    <h1>Planes que crecen con tu cartera</h1>
+    <p>Todos los planes incluyen 14 días de prueba gratuita, sin tarjeta. Cobro recurrente con Stripe Billing; cambia o cancela cuando quieras.</p>
+  </div>
+</section>
+
+<section class="section" id="planes" style="padding-top:40px">
+  <div class="container">
+    <div class="toggle-wrap reveal">
+      <span data-lbl-month class="on">Mensual</span>
+      <button class="switch" aria-label="Cambiar facturación"></button>
+      <span data-lbl-year>Anual</span>
+      <span class="save-tag">Ahorra 2 meses</span>
+    </div>
+
+    <div class="plans">
+      <!-- Starter -->
+      <div class="plan reveal">
+        <h3>Starter</h3>
+        <p class="desc">Para administradores independientes que arrancan con su primera cartera.</p>
+        <div class="price"><span class="amt">$<span data-month="690" data-year="575">690</span></span><span class="per" data-per>/mes</span></div>
+        <p class="note">MXN + IVA · hasta 25 unidades</p>
+        <ul class="feat-list">
+          <li>Hasta 25 unidades</li>
+          <li>Cobro automático de rentas</li>
+          <li>Pagos con Stripe</li>
+          <li>Recibos en PDF</li>
+          <li>Portal del inquilino</li>
+          <li>1 usuario administrador</li>
+        </ul>
+        <a class="btn btn-ghost" href="contacto.html">Empezar gratis</a>
+      </div>
+
+      <!-- Pro -->
+      <div class="plan feat reveal">
+        <h3>Profesional</h3>
+        <p class="desc">Para agencias en crecimiento que necesitan automatizar y delegar.</p>
+        <div class="price"><span class="amt">$<span data-month="1,690" data-year="1,409">1,690</span></span><span class="per" data-per>/mes</span></div>
+        <p class="note">MXN + IVA · hasta 150 unidades</p>
+        <ul class="feat-list">
+          <li>Todo lo de Starter, más:</li>
+          <li>Hasta 150 unidades</li>
+          <li>Alertas de morosidad escalonadas</li>
+          <li>Firma digital de contratos</li>
+          <li>Gestión de documentos en S3</li>
+          <li>Calendario de vencimientos</li>
+          <li>Roles y permisos granulares</li>
+          <li>Importación masiva CSV/Excel</li>
+          <li>Hasta 10 usuarios</li>
+        </ul>
+        <a class="btn btn-primary" href="contacto.html">Empezar gratis</a>
+      </div>
+
+      <!-- Enterprise -->
+      <div class="plan reveal">
+        <h3>Enterprise</h3>
+        <p class="desc">Para inmobiliarias y grupos con múltiples sucursales y alto volumen.</p>
+        <div class="price"><span class="amt">A medida</span></div>
+        <p class="note">Unidades ilimitadas · facturación personalizada</p>
+        <ul class="feat-list">
+          <li>Todo lo de Profesional, más:</li>
+          <li>Unidades y usuarios ilimitados</li>
+          <li>API REST con acceso ampliado</li>
+          <li>Logs de auditoría avanzados</li>
+          <li>2FA obligatorio y SSO</li>
+          <li>Subdominio propio dedicado</li>
+          <li>Onboarding y soporte prioritario</li>
+          <li>SLA de disponibilidad 99.9%</li>
+        </ul>
+        <a class="btn btn-ghost" href="contacto.html">Hablar con ventas</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Comparativa -->
+<section class="section" style="background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line)">
+  <div class="container">
+    <div class="section-head reveal" style="margin-bottom:34px">
+      <span class="eyebrow">Comparativa</span>
+      <h2>Funcionalidades por plan</h2>
+    </div>
+    <div class="reveal" style="overflow-x:auto">
+      <table class="compare">
+        <thead>
+          <tr><th>Funcionalidad</th><th class="c">Starter</th><th class="c">Profesional</th><th class="c">Enterprise</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Cobro automático de rentas</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+          <tr><td>Pagos con Stripe + conciliación</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+          <tr><td>Recibos en PDF personalizados</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+          <tr><td>Portal del inquilino</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+          <tr><td>Alertas de morosidad escalonadas</td><td class="c no">—</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+          <tr><td>Firma digital de contratos</td><td class="c no">—</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+          <tr><td>Gestión de documentos (S3)</td><td class="c no">—</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+          <tr><td>Roles y permisos granulares</td><td class="c no">—</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+          <tr><td>Importación masiva CSV/Excel</td><td class="c no">—</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+          <tr><td>API REST documentada</td><td class="c no">—</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+          <tr><td>Logs de auditoría avanzados</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">✓</td></tr>
+          <tr><td>2FA obligatorio y SSO</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">✓</td></tr>
+          <tr><td>SLA 99.9% y soporte prioritario</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">✓</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ precios -->
+<section class="section" style="background:var(--grad-soft)">
+  <div class="container">
+    <div class="section-head reveal"><span class="eyebrow">Dudas sobre planes</span><h2>Preguntas frecuentes</h2></div>
+    <div class="faq">
+      <div class="faq-item reveal"><button class="faq-q">¿Cómo funciona la prueba gratuita?<span class="x">+</span></button><div class="faq-a"><p>Tienes 14 días para usar la plataforma completa sin ingresar tarjeta. Al terminar, eliges el plan que mejor se adapte a tu cartera y activas el cobro recurrente con Stripe Billing.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">¿Puedo cambiar de plan después?<span class="x">+</span></button><div class="faq-a"><p>Sí. Puedes hacer upgrade o downgrade en cualquier momento; el ajuste de cobro es automático y prorrateado gracias a Stripe Billing.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">¿Qué cuenta como "unidad"?<span class="x">+</span></button><div class="faq-a"><p>Cada espacio rentable: un departamento, un local comercial, una casa o una oficina. El plan se basa en el número total de unidades activas en tu organización.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">¿Las comisiones de Stripe están incluidas?<span class="x">+</span></button><div class="faq-a"><p>La suscripción a la plataforma es independiente de las comisiones por procesamiento de pagos de Stripe, que se rigen por sus tarifas vigentes. Tú conectas tu propia cuenta de Stripe.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">¿Puedo cancelar cuando quiera?<span class="x">+</span></button><div class="faq-a"><p>Claro. No hay contratos forzosos; cancelas desde tu panel y conservas el acceso hasta el final del período ya facturado.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-band reveal">
+      <h2>Empieza gratis hoy, sin tarjeta</h2>
+      <p>Activa tu organización en minutos y prueba la plataforma completa por 14 días.</p>
+      <div class="acts">
+        <a class="btn btn-light btn-lg" href="contacto.html">Crear mi organización</a>
+        <a class="btn btn-wa btn-lg" href="https://wa.me/5215594356241" target="_blank" rel="noopener">💬 Hablar por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="index.html"><span class="brand-mark">⌂</span><span>Gabriel Chernitsky<small>Property Management Cloud</small></span></a>
+        <p>Software de gestión de propiedades para administradores, agencias e inmobiliarias. Cobro de rentas, mantenimiento, portal de inquilinos y reportes en una sola plataforma.</p>
+      </div>
+      <div class="footer-col"><h4>Producto</h4><a href="funcionalidades.html">Funcionalidades</a><a href="precios.html">Precios</a><a href="index.html#como-funciona">Cómo funciona</a><a href="contacto.html">Solicitar demo</a></div>
+      <div class="footer-col"><h4>Soluciones</h4><a href="funcionalidades.html">Para agencias</a><a href="funcionalidades.html">Para administradores</a><a href="funcionalidades.html">Para inmobiliarias</a><a href="precios.html">Suscripciones SaaS</a></div>
+      <div class="footer-col"><h4>Contacto</h4><a href="contacto.html">Escríbenos</a><a href="https://wa.me/5215594356241" target="_blank" rel="noopener">WhatsApp</a><a href="contacto.html">Soporte</a><a class="footer-wa" href="https://wa.me/5215594356241" target="_blank" rel="noopener" style="margin-top:10px">💬 ¿Quieres tu sitio? Escríbenos por WhatsApp</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span data-year-now>2026</span> Gabriel Chernitsky · Property Management Cloud. Todos los derechos reservados.</p>
+      <p>Desarrollado por <a class="oc" href="https://wa.me/5215594356241" target="_blank" rel="noopener">Overcloud</a></p>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5215594356241" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+<script src="main.js"></script>
+</body>
+</html>
